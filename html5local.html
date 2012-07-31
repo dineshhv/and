@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="result"></div>
+<script>
+if(typeof(Storage)!=="undefined")
+  {
+ 
+  if(localStorage.lastname=="")
+  {
+	 localStorage.lastname="dinesh"; 
+  }
+  else
+  {
+  document.getElementById("result").innerHTML="Last name: " + localStorage.lastname;
+  }
+  }
+else
+  {
+  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
+  }
+</script>
+
+</body>
+</html>
+

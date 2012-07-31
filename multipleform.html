@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.js"></script>
+<script type="text/javascript" src="jquery.session.js"></script>
+<script>
+$(document).ready(function(e) {
+	 
+   $('.inner_form1').show();
+   $('.inner_form2').hide(); 
+   $('#crt_grp').click(function(e) {
+	   var grp=$('#grp').val();
+	   $('div.aread').append(grp);
+	   $.session.set('info', grp);
+	   alert($.session.get('info'));
+	   
+	   
+	   
+	 
+       $('.inner_form1').hide();
+  	   $('.inner_form2').show();
+	   $('#crt_frd').click(function(e) {
+				  var frd=$('#frd').val();
+				  $('div.aread').append(frd);
+				 //$.session.set('info', 'frd');
+       	 $('.inner_form2').show();
+    	});
+	   $('#finish').click(function(e) {
+        $('.inner_form1').show();
+  	    $('.inner_form2').hide();
+		$('.aread').aread();
+    });
+});
+	
+});
+</script>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<div class="form">
+
+
+<input type="text">
+
+<div class="aread"></div>
+
+<div class="inner_form1">
+  <label for="grp"></label>
+  <input type="text" name="grp" id="grp">
+  <input name="crt_grp" type="button" id="crt_grp" value="one">
+</div>
+
+
+
+<div class="inner_form2">
+  <label for="frd"></label>
+  <input type="text" name="frd" id="frd">
+  <input name="crt_frd" type="button" id="crt_frd" value="two">
+  <input type="submit" name="finish" id="finish" value="finish">
+</div>
+
+ 
+</div>
+</form>
+</body>
+</html>

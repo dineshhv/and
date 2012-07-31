@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ajax Conact Form</title>
+   
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+</head>
+<script>
+/*var $child = $('#child');
+var height = $child.height();
+
+var $container       = $('#container');
+var container_height = $container.height();
+$container.resizable();
+
+$child.keyup(function() {
+    var h = $child.height();
+    if(h > container_height) {
+        $container.height(h);
+        container_height = h;
+    }
+});*/
+$(document).ready(function(e) {
+	
+    $('#add').click(function()
+	{
+		var container = $('#container').height(); /* cache the selector */
+	var final=container+25;
+	
+		$('#container').height(final);
+		$('#int_cont').height(final);
+	})
+});
+</script>
+<style>
+#container {
+    width: 200px;
+    height: 50px;
+    border: 1px solid red;
+}
+#child {
+    background-color: #ccc;
+}
+#another_cont
+{
+	width:200px;
+	height:100%;
+	border: 1px solid red;
+}
+#int_cont
+{
+	width:200px;
+	min-height:50px;
+	background-color:#999999;
+}
+</style>
+<style>
+
+.divsty{overflow:auto;height:60px;width:300px;}
+
+</style>
+
+<body>
+
+
+    <div id="container">
+    <div id="child" contenteditable="true">test test test</div>
+    <a href="#" id="add">add</a>
+</div>
+
+<div id="another_cont"><div id="int_cont"></div></div>
+
+
+<div class="divsty">
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text
+<br />
+
+Text text text
+Text<br />
+
+Text text text
+Text<br />
+
+Text text text
+Text
+
+</div>
+
+</body>
+</html>
+
+

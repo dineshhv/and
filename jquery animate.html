@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+<style>
+.filter{ width:200px; height:200px; position:fixed;   z-index:2; }
+.open{opacity:0 !important;}
+.close { background-color:#FFFFFF;}
+.box{ width:200px; height:200px; position:absolute; z-index:1; overflow:hidden;margin:0 0 0 0px; opacity:1;}
+.on1, .on2, .on3, .on4 { width:50px; height:50px; float:left;}
+.one { background-color:#9FC;}
+.two { background-color:#66FFCC;}
+.three { background-color:#999;}
+.four { background-color:#F36;}
+.clear{ clear:both;}
+.circle {
+	margin:200px 200px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color:#0099CC; 
+  /* width and height can be anything, as long as they're equal */
+}
+.inner_circle {  margin:10px 0px 0px 10px; border-radius: 50%;width: 35px;
+  height: 35px;
+  background-color:#069; }
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(e) {
+	$(".circle").toggle(function(e) {
+         $(this).animate({ height: 75, width: 75}, 500);
+    },function(){
+        $(this).animate({ height: 50, width: 50}, 500);
+    });
+	
+    
+});
+</script>
+
+
+<body>
+<div class="filter">
+<div class="row">
+    <div class="on1 open">
+    </div>
+    <div class="on2 close">
+    </div>
+    </div>
+    <div class="clear"></div>
+   <div class="row>"> <div class="on3 close">
+    </div>
+    <div class="on4 close">
+    </div></div>
+</div>
+<div class="box">
+<div class="row">
+    <div class="on1 one">
+    </div>
+    <div class="on2 two">
+    </div>
+    </div>
+    <div class="clear"></div>
+   <div class="row>"> <div class="on3 three">
+    </div>
+    <div class="on4 four">
+    </div></div>
+</div>
+
+
+
+<div class="circle">
+<div class="inner_circle"></div>
+</div>
+
+</body>
+</html>

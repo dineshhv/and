@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+
+<script  language="javascript">
+
+$(document).ready(function(){
+	//global vars
+	var userName = $("#name"); //name field
+	var userEmail = $("#email"); //email field
+	var userTxt = $("#txt"); //comment field
+	var targetDiv = $("#targetDiv"); //target div to print results
+	
+	//function to check name and comment field 
+	function checkCommentsForm(){
+		if(userName.attr("value") && userTxt.attr("value"))
+			return true;
+		else
+			return false;
+	}
+	
+	//When form submitted
+	$("#form1").submit(function(){
+		if(checkCommentsForm()){
+			targetDiv.show('fast');
+			//send to test.php
+			$.ajax({
+				type: "POST", url: 'test.php', data: "name="+userName.val()+"&email="+userEmail.val()+"&txt="+userTxt.val(), 
+	
+				complete: function(data){
+					//print results as appended 
+					targetDiv.append(data.responseText);
+					//print result in targetDiv
+					//targetDiv.html(data.responseText);
+				}
+			});
+		}
+		else alert("Please fill required fields!");
+		return false;
+	});
+});
+</script>
+
+<body>
+<div>
+  <form id="form1" name="form1" method="post" action="" onsubmit="return false;">
+    <p>
+      <input name="name" id="name" type="text">
+      Name</p>
+    <p>
+
+      <input name="email" id="email" type="text">
+      Email
+    </p>
+    <p>
+      <input name="txt" id="txt" type="text">
+      Comment
+    </p>
+    <p>
+      <input name="button" id="button" value="go go..." type="submit">
+    <span onclick="$('#targetDiv').html('')" style="cursor:pointer;">Clear result</span></p>
+
+  </form>
+</div>
+<div id="targetDiv" style="display:none;">
+</div>
+
+</body>
+</html>

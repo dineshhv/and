@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.js"></script>
+<script type="text/javascript">
+ $(document).ready( function() {		
+ 	$("#why-to-buy").mouseover(function() {
+		$('#why-to-buy-tooltip').css('display','block');
+	}).mouseout(function() {
+		
+		setTimeout(function() { 
+                            $('#why-to-buy-tooltip').css('display','none');
+                            }, 500);
+;
+	});
+ });
+</script>
+<style>
+#why-to-buy {
+    position: relative;
+	margin:100px auto;
+}
+
+#why-to-buy-tooltip {
+
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    z-index: 100;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#FFFFFF;
+	padding:5px;
+}
+
+#why-to-buy:hover #why-to-buy-tooltip, #why-to-buy:active #why-to-buy-tooltip {
+    display: block;
+}
+#lank ul{ list-style:none;}
+#lank ul li .current{ font-weight:bold; color:#000000; text-decoration:none;}
+
+</style>
+<body>
+<a id="why-to-buy" class="out" href="#" onclick="return false;">
+    Why To Buy?
+    
+</a>
+<div id="why-to-buy-tooltip" style="display:none;" >
+      
+     <h2> Guarantee</h2><br />
+
+At Asian Food Channel, we stand 100% behind our products which is why we offer a full money back guarantee on all products purchased from our site within seven (7) days of delivery. Products need to be unopened and returned in their original packaging. 
+
+    </div>
+<br />
+test;dsk;ldsjf sd;fjsd;l<br />
+test jsl;f jsl; fd pojf;df
+
+<div id="lank">
+<ul>
+<li><a href="#" class="current">one</a></li>
+<li><a href="#">two</a></li>
+<li><a href="#">three</a></li>
+</ul></div>
+
+</body>
+<script>
+$(document).ready(function(e) {
+    $('#lank a').click(function(){
+  $('.current').removeClass('current');
+  $(this).addClass('current');
+});
+});
+</script>
+</html>
